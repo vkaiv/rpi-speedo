@@ -1,0 +1,2 @@
+
+void getNetworkSpeed(float*, float*);
