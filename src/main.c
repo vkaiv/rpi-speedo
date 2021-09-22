@@ -13,31 +13,31 @@ int main() {
         getNetworkSpeed(&dl_speed, &ul_speed);
         
         if (dl_speed >= 1000 && dl_speed <= 1000000) {
-            dl_speed /= 1000;
+            dl_speed /= 1024;
             writeDownload(dl_speed);
             writeUnit(true, true);
             
         } else if (dl_speed > 1000000){
-            dl_speed /= 1000000;
+            dl_speed /= (1024 * 1024);
             writeDownload(dl_speed);
             writeUnit(false, true);
         } else {
-            dl_speed /= 1000;
+            dl_speed /= 1024;
             writeDownload(dl_speed);
             writeUnit(true, true);
         }
 
         if (ul_speed >= 1000 && ul_speed <= 1000000) {
-            ul_speed /= 1000;
+            ul_speed /= 1024;
             writeUpload(ul_speed);
             writeUnit(true, false);
             
         } else if (ul_speed > 1000000) {
-            ul_speed /= 1000000;
+            ul_speed /= (1024 * 1024);
             writeUpload(ul_speed);
             writeUnit(false, false);
         } else {
-            ul_speed /= 1000;
+            ul_speed /= 1024;
             writeUnit(true, false);
             writeUpload(ul_speed);
         }
